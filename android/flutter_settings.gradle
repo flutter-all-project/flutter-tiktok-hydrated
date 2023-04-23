@@ -1,6 +1,6 @@
 // 混合开发绑定 flutter ：https://juejin.cn/post/7005562586843906085
 // 这里binding，在初次编写的时候，会出现Binding爆红的现象，不用管，这里binding爆红是因为没有sync的结果，如果所有东西都配置完全就不会爆红了，
-setBinding(new Binding([gradle:this]))
+setBinding(new Binding([gradle: this]))
 // 这里是当前flutter_module的位置，最好是把flutter module放在和当前android项目平级的文件夹里面,如果是子文件夹就是 settingsDir
 evaluate(new File(settingsDir.parentFile,'flutter_module/.android/include_flutter.groovy'))
 
