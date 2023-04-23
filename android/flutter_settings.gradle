@@ -7,3 +7,8 @@ evaluate(new File(settingsDir.parentFile,'flutter_module/.android/include_flutte
 //可选，主要作用是可以在当前 Android Studio 的 Project 下显示 flutter_module 以方便查看和编写 Dart 代码
 include ':flutter_module'
 project(':flutter_module').projectDir = new File('../flutter_module')
+
+// 还需要在 flutter_module 下的 .android 中的 build.gradle 中添加
+// android {
+//    namespace 'com.example.tiktok'
+// }
