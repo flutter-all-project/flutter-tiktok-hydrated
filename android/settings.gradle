@@ -6,17 +6,12 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-//    repositories {
-//        google()
-//        mavenCentral()
-//    }
-
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS) // edit this
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
-
         String flutterStorageUrl = System.getenv("FLUTTER_STORAGE_BASE_URL") ?: "https://storage.googleapis.com"
         maven {
             url flutterStorageUrl + "/download.flutter.io"
@@ -27,3 +22,5 @@ rootProject.name = "tiktok"
 include ':app'
 // 安卓混合 flutter_module: https://juejin.cn/post/7005562586843906085
 apply { from("flutter_settings.gradle") }
+
+
