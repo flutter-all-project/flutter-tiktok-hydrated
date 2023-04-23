@@ -22,5 +22,3 @@ rootProject.name = "tiktok"
 include ':app'
 // 安卓混合 flutter_module: https://juejin.cn/post/7005562586843906085
 apply { from("flutter_settings.gradle") }
-
-
