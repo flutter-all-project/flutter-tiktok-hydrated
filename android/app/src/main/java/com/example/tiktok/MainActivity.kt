@@ -11,11 +11,17 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.tiktok.databinding.ActivityMainBinding
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
+    private val  friendFragment by lazy {
+        FlutterFragment.withNewEngine().initialRoute("/").build<FlutterFragment>()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -31,6 +37,12 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
+
+            // flutter 官方测试混合效果
+            startActivity(
+                FlutterActivity.createDefaultIntent(this)
+            )
+
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
